@@ -8,12 +8,15 @@ import android.view.ViewGroup;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class MainActivityFragment extends Fragment {
+
+    private static final String YOUR_ADMOB_APP_ID = BuildConfig.YOUR_ADMOB_APP_ID;
 
     public MainActivityFragment() {
     }
@@ -22,6 +25,10 @@ public class MainActivityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
+
+        //this is the test ca-app-pub-3940256099942544/6300978111
+        MobileAds.initialize(getActivity(), YOUR_ADMOB_APP_ID);
+
 
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to

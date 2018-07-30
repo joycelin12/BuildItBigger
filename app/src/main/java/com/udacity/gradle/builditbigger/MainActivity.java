@@ -7,13 +7,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.MobileAds;
+
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
     }
 
 
@@ -38,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    //referencing this https://help.github.com/articles/splitting-a-subfolder-out-into-a-new-repository/ to get subfolder from main directory
 
     public void tellJoke(View view) {
         Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
