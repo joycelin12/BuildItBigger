@@ -52,18 +52,13 @@ public class MainActivity extends AppCompatActivity {
     public void tellJoke(View view) {
 
         myClass myJoker = new myClass();
-
         Toast.makeText(this, myJoker.getJokes(), Toast.LENGTH_SHORT).show();
-    }
-
-
-    public void launchJokeActivity(View view) {
         Intent intent = new Intent(this, JokeActivity.class);
-        myClass myJoker = new myClass();
         String joke = myJoker.getJokes();
         intent.putExtra(JokeActivity.JOKE_KEY, joke);
         startActivity(intent);
     }
+
 
 
 }
