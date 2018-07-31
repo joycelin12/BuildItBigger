@@ -1,5 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -7,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.android.jokedisplay.JokeActivity;
+import com.example.android.jokes.myClass;
 import com.google.android.gms.ads.MobileAds;
 
 
@@ -47,7 +50,19 @@ public class MainActivity extends AppCompatActivity {
     //referencing this https://help.github.com/articles/splitting-a-subfolder-out-into-a-new-repository/ to get subfolder from main directory
 
     public void tellJoke(View view) {
-        Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
+
+        myClass myJoker = new myClass();
+
+        Toast.makeText(this, myJoker.getJokes(), Toast.LENGTH_SHORT).show();
+    }
+
+
+    public void launchJokeActivity(View view) {
+        Intent intent = new Intent(this, JokeActivity.class);
+        myClass myJoker = new myClass();
+        String joke = myJoker.getJokes();
+        intent.putExtra(JokeActivity.JOKE_KEY, joke);
+        startActivity(intent);
     }
 
 
