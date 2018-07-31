@@ -50,6 +50,6 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
 
-    compile project(':Jokes')
-    compile project(path: ':jokedisplay')
+    implementation project(':Jokes')
+    implementation project(':jokedisplay')
 }

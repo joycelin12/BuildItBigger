@@ -2,6 +2,7 @@ package com.example.android.jokedisplay;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -13,6 +14,7 @@ public class JokeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joke);
+
     }
 
     @Override
@@ -36,4 +38,7 @@ public class JokeActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    //referencing https://stackoverflow.com/questions/32239921/error-inflating-class-fragment-with-fragment-library
+    //as it help me debug
 }
