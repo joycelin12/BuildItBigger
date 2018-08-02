@@ -21,13 +21,10 @@ public class JokeActivityFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.e("TAG", "is it here 1");
         View root = inflater.inflate(R.layout.fragment_joke, container, false);
-        Log.e("TAG", "is it here 2");
 
         Intent intent = getActivity().getIntent();
         String joke = intent.getStringExtra(JokeActivity.JOKE_KEY);
-        Log.e("TAG", "is it here 3");
 
         TextView jokeTextView = (TextView) root.findViewById(R.id.joke_textview);
         if (joke != null && joke.length() != 0) {
