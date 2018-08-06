@@ -15,9 +15,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.android.jokedisplay.JokeActivity;
-import com.example.android.jokes.myClass;
-import com.google.android.gms.ads.MobileAds;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -57,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //referencing this https://help.github.com/articles/splitting-a-subfolder-out-into-a-new-repository/ to get subfolder from main directory
-
+   /*
     public void tellJoke(View view) {
 
         myClass myJoker = new myClass();
@@ -68,12 +65,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-
+    */
     public void tellJokesAgain(View view) {
 
-        myClass myJoker = new myClass();
-        String joke = myJoker.getJokes();
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, joke));
+          new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "joke"));
 
     }
 
