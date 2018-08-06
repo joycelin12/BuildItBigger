@@ -32,6 +32,37 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/test/java' ]
+        }
+        free{
+            java.srcDirs = ['src/free/java' ]
+            res.srcDirs = ['src/free/res']
+        }
+        paid{
+            java.srcDirs = ['src/paid/java'  ]
+            res.srcDirs = ['src/paid/res']
+
+        }
+
+    }
+
+    // Specifies two flavor dimensions.
+    flavorDimensions "version"
+
+    productFlavors{
+
+        free{
+            applicationId "com.udacity.gradle.builditbigger.free"
+            dimension "version"
+        }
+        paid{
+            applicationId "com.udacity.gradle.builditbigger.paid"
+            dimension "version"
+        }
+
+    }
 }
 
 dependencies {
@@ -44,12 +75,21 @@ dependencies {
     implementation 'com.android.support:support-annotations:27.1.1'
     implementation 'com.google.android.gms:play-services-ads:15.0.1'
 
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    implementation 'com.android.support.test.espresso:espresso-idling-resource:3.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.0') {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude module: 'recyclerview-v7'
+    }
 
     testImplementation 'junit:junit:4.12'
 
     implementation project(':Jokes')
     implementation project(':jokedisplay')
+    implementation 'com.android.support:multidex:1.0.3'
 }

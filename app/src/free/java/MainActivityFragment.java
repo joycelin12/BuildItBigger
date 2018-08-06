@@ -1,4 +1,5 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.free;
+
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,11 +10,13 @@ import android.view.ViewGroup;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-
+import com.udacity.gradle.builditbigger.BuildConfig;
+import com.udacity.gradle.builditbigger.R;
 
 /**
- * A placeholder fragment containing a simple view.
+ * Created by joycelin12 on 8/4/18.
  */
+
 public class MainActivityFragment extends Fragment {
 
     private static final String YOUR_ADMOB_APP_ID = BuildConfig.YOUR_ADMOB_APP_ID;
